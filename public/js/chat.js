@@ -39,6 +39,7 @@ socket.on('locationMessage', (message) => {
         createdAt: moment(message.createdAt).format('h:mm a')
     })
     $('#messages').append(html);
+    autoscroll();
 });
 socket.on('roomData', ({room, users}) => {
     const html = Mustache.render($('#sidebar-template').html(),{
